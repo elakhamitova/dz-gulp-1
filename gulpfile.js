@@ -7,6 +7,7 @@ gulp.task('server', ['styles'], function() {
     	server: { baseDir: './app/'}
     });
     gulp.watch('./app/**/*.html').on('change', browserSync.reload);
+    gulp.watch('.app/less/*.less', ['less']);
 
 });
 
@@ -17,4 +18,4 @@ gulp.task('styles', function() {
     .pipe(browserSync.stream());
 });
 
-
+gulp.task('default', ['server']);
